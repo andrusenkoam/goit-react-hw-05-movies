@@ -1,0 +1,36 @@
+.searchForm {
+  display: flex;
+  justify-content: center;
+}
+
+.searchText {
+  min-width: 50%;
+  height: 20px;
+}
+
+.searchBtn {
+  padding: 3px 4px;
+}
+
+.list {
+  padding-left: 40px;
+  list-style: disc;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.link {
+  font-size: 18px;
+  transition: color 250ms ease;
+}
+
+.link:focus,
+.link:hover {
+  color: red;
+}
+
+.movieError {
+  font-size: 18px;
+}

@@ -1,0 +1,25 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.castItem {
+  border: 1px solid #000;
+  border-radius: 4px;
+  flex-basis: calc((100% - 50px) / 5);
+  overflow: hidden;
+}
+
+.castTitle {
+  font-size: 18px;
+}
+
+.castText {
+  font-size: 14px;
+}
+
+.castError {
+  font-size: 18px;
+}

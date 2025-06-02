@@ -1,0 +1,18 @@
+.list {
+  padding-left: 40px;
+  list-style: disc;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.link {
+  font-size: 18px;
+  transition: color 250ms ease;
+}
+
+.link:focus,
+.link:hover {
+  color: red;
+}

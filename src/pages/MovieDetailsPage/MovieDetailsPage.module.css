@@ -1,0 +1,58 @@
+.goBackBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  transition: color 500ms ease;
+}
+
+.goBackBtn:hover,
+.goBackBtn:focus {
+  color: red;
+}
+
+.details {
+  display: flex;
+}
+
+.details,
+.information {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.imageWraper {
+  width: 300px;
+}
+
+.detailsWraper {
+  padding-left: 14px;
+}
+
+.detailsTitle,
+.scoreInfo,
+.overwiesTitle,
+.overwiesInfo,
+.genresTitle {
+  margin-bottom: 14px;
+}
+
+.informationTitle {
+  margin-bottom: 10px;
+}
+
+.informationList {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.link {
+  transition: color 250ms ease;
+}
+
+.link:focus,
+.link:hover {
+  color: red;
+}

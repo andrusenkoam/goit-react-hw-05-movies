@@ -1,0 +1,20 @@
+.imageWraper {
+  width: 50%;
+  /* height: 40%; */
+  margin: auto;
+}
+
+.link {
+  display: block;
+  margin-top: 10px;
+  padding: 4px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  text-align: center;
+  transition: color 500ms ease;
+}
+
+.link:hover,
+.link:focus {
+  color: red;
+}
