@@ -59,7 +59,11 @@ const MoviesPage = () => {
       <Section>
         {isLoading && <Loader />}
         {error && <ErrorMessage message={error.message} />}
-        <form className={css.searchForm} onSubmit={handleSubmit}>
+        <form
+          className={css.searchForm}
+          onSubmit={handleSubmit}
+          autoComplete="off"
+        >
           <input className={css.searchText} type="text" name="text" autoFocus />
           <button className={css.searchBtn} type="submit" disabled={isLoading}>
             Search

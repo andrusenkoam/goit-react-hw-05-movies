@@ -1,15 +1,26 @@
 .searchForm {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 25px;
 }
 
 .searchText {
-  min-width: 50%;
-  height: 20px;
+  margin-right: 2px;
+  width: 50%;
+  height: 100%;
 }
 
 .searchBtn {
-  padding: 3px 4px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  transition: color 500ms ease;
+}
+
+.searchBtn:hover,
+.searchBtn:focus {
+  color: red;
 }
 
 .list {
