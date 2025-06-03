@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { Section } from 'components/Section/Section';
 import { Loader } from 'components/Loader/Loader';
 import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
@@ -18,7 +19,16 @@ const MoviesPage = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     const { value } = evt.target.elements.text;
-    if (value.trim() === '') return;
+    if (value.trim() === '') {
+      toast.warn('Enter a search query!', {
+        position: 'top-center',
+        autoClose: 2000,
+        theme: 'colored',
+      });
+
+      return;
+    }
+    setMovies([]);
     setSearchText(value.toLowerCase());
     setSearchParams({ query: value.toLowerCase() });
     evt.target.reset();
@@ -48,7 +58,15 @@ const MoviesPage = () => {
         return resp.json();
       })
       .then(data => {
-        setMovies(data.results);
+        const { results, total_results } = data;
+        if (total_results === 0) {
+          toast.error(`There are no results for query ${searchText}`, {
+            position: 'top-center',
+            autoClose: 2000,
+            theme: 'colored',
+          });
+        }
+        setMovies(results);
       })
       .catch(error => setError(error))
       .finally(() => setIsLoading(false));
@@ -71,7 +89,7 @@ const MoviesPage = () => {
         </form>
       </Section>
       <Section>
-        {movies.length !== 0 ? (
+        {movies.length !== 0 && (
           <ul className={css.list}>
             {movies.map(({ id, title }) => (
               <li className={css.item} key={id}>
@@ -81,12 +99,6 @@ const MoviesPage = () => {
               </li>
             ))}
           </ul>
-        ) : (
-          <p className={css.movieError}>
-            {searchText !== ''
-              ? `There are no results for query ${searchText}`
-              : ''}
-          </p>
         )}
       </Section>
     </>
